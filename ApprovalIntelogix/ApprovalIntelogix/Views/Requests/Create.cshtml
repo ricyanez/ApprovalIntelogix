@@ -1,0 +1,69 @@
+﻿@model ApprovalIntelogix.Models.Request
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Request</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdRequest" class="control-label"></label>
+                <input asp-for="IdRequest" class="form-control" value="@Guid.NewGuid().ToString()" readonly/>
+                <span asp-validation-for="IdRequest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Utilities" class="control-label"></label>
+                <input asp-for="Utilities" class="form-control" />
+                <span asp-validation-for="Utilities" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Currency" class="control-label"></label>
+                <input asp-for="Currency" class="form-control" />
+                <span asp-validation-for="Currency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Files1" class="control-label"></label>
+                <input asp-for="Files1" class="form-control" />
+                <span asp-validation-for="Files1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Files2" class="control-label"></label>
+                <input asp-for="Files2" class="form-control" />
+                <span asp-validation-for="Files2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdWorkflow" class="control-label"></label>
+                <select asp-for="IdWorkflow" class ="form-control" asp-items="ViewBag.IdWorkflow"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

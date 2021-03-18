@@ -1,0 +1,309 @@
+﻿@model IEnumerable<ApprovalIntelogix.Models.Request>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Currency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Files1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Files2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdWorkflowNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Utilities)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Currency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Files1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Files2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdWorkflowNavigation.IdWorkflow)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdRequest">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdRequest">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdRequest">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="col-lg-12 col-md-12 col-sm-12">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="reql-page-card-wrp" style="flex: 1; overflow: hidden; position: relative; background: #fff;">
+                    <div class="reql-page-card reql-request-card" style=" background: #fff; left:0; top:0;">
+                        <div class="reql-request-card-card reql-standalone-request-card">
+                            <div class="card-toolbar" style="flex:none;" id="reql-toolbar">
+                                <div class="reql-toolbar-header" style=" display: flex; align-items: center; height: 60px; padding: 0 60px;">
+                                    <div class="reql-toolbar-title" style=" flex: 1; margin-right: 10px; display: flex; align-items: center; overflow: hidden;">
+                                        <div class="reql-toolbar-title-text" title="Test test" style="flex: 1; margin-right: 10px; display: flex; align-items: center; overflow: hidden;">@item.Utilities</div>
+                                    </div>
+                                    <div class="reql-toolbar-amount" style="flex: none; font-family: Open Sans,sans-serif,Arial; font-weight: 800; font-size: 16px; color: #000; " id="reql-toolbar-amount" title="0.00 USD">@Math.Round(item.Amount, 2)  @item.Currency</div>
+                                </div>
+                                <div class="reql-toolbar_body" style="display: flex; width: 100%; padding: 0 60px;">
+                                    <div class="reql-toolbar_body-left" style="flex: 1; display: flex; flex-direction: column; z-index: 1;">
+                                        <div class="reql-toolbar-integration-header" style="flex: 1; display: flex; align-items: center; -webkit-user-select: none; user-select: none; overflow: hidden;">
+                                            <div class="common-ui-user-hover" style="box-sizing: border-box;">
+                                                <div class="reql-toolbar-integration-header__avatar ui-raw-avatar ui-raw-avatar--abbreviation" title="test" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px;">RY</div>
+                                            </div>
+                                            <div class="reql-toolbar-integration-header__requested-by-block" style="flex: 1; display: flex; flex-flow: column; overflow: hidden; margin-left: 5px;">
+                                                <div class="reql-toolbar-integration-header__source" style=" font-family: Open Sans,sans-serif,Arial; font-weight: 50%; font-size: 12px; color: #777d81;">Submitted by Ricardo Yanez</div>
+                                                <div class="reql-toolbar-integration-header__company-name" title="PLIG" style=" margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: Open Sans,sans-serif,Arial; font-weight: 400; font-size: 11px; color: #000; text-transform: uppercase;">PLIG</div>
+                                            </div>
+                                        </div>
+                                        <div class="reql-toolbar_secondary-actions" style="display: flex; -webkit-user-select: none; user-select: none; padding: 10px 0 0;">
+                                            <div class="reql-toolbar_secondary-actions-title" style="font-family: Open Sans,sans-serif,Arial; font-weight: 50%; font-size: 12px; color: #777d81; margin-right: 10px; margin-top: 1px; flex-shrink: 0;">Test actions: </div>
+                                            <div class="reql-toolbar_secondary-actions-buttons" style=" display: flex; flex-flow: row wrap; align-items: center; flex-shrink: 0;">
+                                                <button type="button" role="button" title="Edit" class="btn btn-outline-primary text-blue" tabindex="0" style="text-transform: uppercase;">Edit</button>
+                                                <div class="reql-toolbar_secondary-actions-separator"></div>
+                                                <button type="button" role="button" title="Copy request" class="btn btn-outline-primary text-blue" tabindex="0" style="text-transform: uppercase;">Copy</button>
+                                                <div class="reql-toolbar_secondary-actions-separator"></div>
+                                                <button type="button" role="button" title="Cancel request" class="btn btn-outline-primary text-blue" tabindex="0" style="text-transform: uppercase;">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reql-toolbar_body-right" style="flex: none; display: flex; flex-flow: column; align-items: flex-end; margin-left: 10px;">
+                                        <div class="reql-toolbar_body-right-primary-row" style="display: flex; align-items: center;">
+                                            <div class="reql-toolbar_post-approval-section" style="display: flex; align-items: center;"></div>
+                                            <div class="reql-toolbar_primary-buttons" style="margin-left: 10px; display: flex;">
+                                                <div class="reql-force-decision-button" style="margin-right: 3px; box-sizing: border-box;">
+                                                    <button class="btn btn-info" role="button" title="Force approval / rejection for this request" id="reql-force-decision-button__force-decision-menu-button" tabindex="0" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; fill: #384650; cursor: pointer; -webkit-user-select: none; user-select: none;">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="reql-force-decision-button" style="margin-right: 3px; box-sizing: border-box;">
+                                                    <button type="button" role="button" title="Reject request with comment" id="reql-toolbar__reject-button" class="btn btn-info" tabindex="0" style="font-size: 14px;padding: 0px 28px;height: 36px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;display: flex;align-items: center;justify-content: center;max-width: 100%;text-transform: uppercase;font-weight: 600;transition: all .3s;cursor: pointer;-webkit-user-select: none;user-select: none;">Reject</button>
+                                                </div>
+                                                <button type="button" role="button" title="Approve request" id="reql-toolbar__approve-button" class="btn btn-info" tabindex="0" style="font-size: 14px;padding: 0px 28px;height: 36px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;display: flex;align-items: center;justify-content: center;max-width: 100%;text-transform: uppercase;font-weight: 600;transition: all .3s;cursor: pointer;-webkit-user-select: none;user-select: none;">Approve</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reql-standalone-request-card_scrollable-area ui-scrollable-area" style="flex: 1; overflow: hidden; border-top: 1px solid #e4e4e4; position: relative; z-index: 0; margin-top:10px;">
+                                <div class="ui-scrollable-area_scroll-shadow" style=" position: absolute; top: -8px; left: 0; right: 0; height: 8px; box-shadow: 0 2px 3px #ddd; opacity: 0; transition: opacity .5s ease-in-out; pointer-events: none;"></div>
+                                <div class="ui-scrollable-area_content" style="height: 100%; overflow-y: auto; overflow-x: hidden;">
+                                    <div class="reql-standalone-request-card_scrollable-content" style="padding-top: 20px;">
+                                        <section class="reql-section-container" style="padding: 0 60px; display: flex; flex-flow: column;">
+                                            <header class="reql-section-container_header" style="flex: none; height: 40px; line-height: 40px; font-family: Open Sans,sans-serif,Arial; font-weight: 600; font-size: 14px; color: #000; text-transform: uppercase;">Approval Workflow</header>
+                                            <div class="reql-section-container_body" style="overflow: hidden;">
+                                                <div class="reql-workflow-section" id="reql-workflow-section" style="padding: 10px 0 30px; display: flex; overflow-x: auto;">
+                                                    <!-- Horizontal Steppers -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+
+                                                            <!-- Stepers Wrapper -->
+                                                            <ul class="stepper stepper-horizontal">
+
+                                                                <!-- First Step -->
+                                                                <li class="completed">
+                                                                    <a href="#!">
+                                                                        <span class="circle">1</span>
+                                                                        <span class="label">First step</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <!-- Second Step -->
+                                                                <li class="active">
+                                                                    <a href="#!">
+                                                                        <span class="circle">2</span>
+                                                                        <span class="label">Second step</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <!-- Third Step -->
+                                                                <li class="warning">
+                                                                    <a href="#!">
+                                                                        <span class="circle"><i class="fas fa-exclamation"></i></span>
+                                                                        <span class="label">Third step</span>
+                                                                    </a>
+                                                                </li>
+
+                                                            </ul>
+                                                            <!-- /.Stepers Wrapper -->
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.Horizontal Steppers -->
+                                                    <!--<div class="reql-workflow-section_step-container reql-workflow-section_step-container-selected" style="display: flex; flex-flow: column; overflow: hidden; min-width: 40%;">
+        <div class="reql-workflow-section_step-bubble-row" style=" display: flex; align-items: center;">
+            <div class="reql-workflow-section_step-bubble-wrp" style="overflow: hidden; width: 100%;">
+                <div class="reql-workflow-section_step-bubble reql-workflow-section_step-bubble--selected reql-workflow-section__step-bubble--active ui-tooltip" id="reql-workflow-section__step-bubble" aria-owns="submenu" aria-controls="portal1" style="border: 1px solid #77aa84; color: #477753; margin-left:5px;">
+                    <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                    <div class="reql-workflow-section_step-active-text" id="reql-workflow-section__step-active-text" style="font-family: Open Sans,sans-serif,Arial; font-weight: 600; font-size: 11px; text-transform: uppercase; margin-left: 10px; text-align: right; white-space: nowrap;">Active</div>
+                </div>
+            </div>
+            <!--<div class="reql-workflow-section__step-separator-icon" style=" margin: 0 6px 0 5px; flex: none;">
+                    <div class="ui-icon">
+                        <svg width="6" height="12"><use xlink:href="#bubble-separator-icon"></use></svg>
+                    </div>
+                </div>
+            </div>-->
+                                                    <!--<div class="reql-workflow-section__step-details" style="display: flex; flex-flow: column; margin-right: 18px;">
+                    <div class="reql-workflow-section__step-type" style="font-family: Open Sans,sans-serif,Arial; font-weight: 400; font-size: 11px; color: #6c6a6a; text-align: center; margin-top: 5px;">Approval condition: All</div>
+                    <div class="reql-workflow-section__step-participant-list" style=" display: flex; flex-flow: wrap; margin-top: 20px;">
+                        <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="Jaime Lorenzo Fonseca Ruiz" title="test" style=" width: 30px; height: 30px; line-height: 30px; font-size: 13px;">
+                            <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--image" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px; background-image: url(&quot;https://approvalmax.com;);"></div>
+                            <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Jaime Lorenzo Fonseca Ruiz</div>
+                        </div>
+                        <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="test" title="test">
+                            <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--image" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px; background-image: url(&quot;https://approvalmax.com;);"></div>
+                            <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Jaime Lorenzo Fonseca Ruiz</div>
+                        </div>
+                        <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="Ricardo Yanez" title="test">
+                            <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--abbreviation" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px;">RY</div>
+                            <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Ricardo Yanez</div>
+                        </div>
+                        <button type="button" class="reql-workflow-section__step-edit-button ui-transparent-button" role="button" tabindex="0" title="Change Approvers in this step" id="reql-workflow-section__step-edit-button">
+                            <div>
+                                <div class="ui-icon">
+                                    <svg width="30" height="30"><use xlink:href="#workflow-step-edit-icon"></use></svg>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="reql-workflow-section__step-reassign-button ui-transparent-button" role="button" tabindex="0" title="Reassign request to another Approver" id="reql-workflow-section__step-reassign-button">
+                            <div>
+                                <div class="ui-icon">
+                                    <svg width="30" height="30"><use xlink:href="#workflow-step-reassign-icon"></use></svg>
+                                </div>
+                            </div>
+                        </button>
+                    </div>///
+            </div>
+        </div>
+        <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
+            <div class="reql-workflow-section_step-bubble-row">
+                <div class="reql-workflow-section_step-bubble-wrp">
+                    <div class="reql-workflow-section_step-bubble reql-workflow-section_step-bubble--not-started ui-tooltip" id="reql-workflow-section__step-bubble">
+                        <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                    </div>
+                </div>
+                <div class="reql-workflow-section__step-separator-icon" style="align-content:center;">
+                    <div class=""><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
+            <div class="reql-workflow-section_step-bubble-row">
+                <div class="reql-workflow-section_step-bubble-wrp">
+                    <div class="reql-workflow-section_step-bubble reql-workflow-section__step-bubble--not-started ui-tooltip" id="reql-workflow-section__step-bubble">
+                        <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                    </div>
+                </div>
+                <div class="reql-workflow-section_step-separator-icon">
+                    <div class=""><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
+            <div class="reql-workflow-section_step-bubble-row">
+                <div class="reql-workflow-section_step-bubble-wrp">
+                    <div class="reql-workflow-section_step-bubble reql-workflow-section__step-bubble--not-started" id="reql-workflow-section__step-bubble" aria-owns="submenu" aria-controls="portal2">
+                        <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+                                                </div>
+                                        </section>
+                                        <section class="reql-section-container" style="padding: 0 60px; display: flex; flex-flow: column;">
+                                            <header class="reql-section-container_header" style="flex: none; height: 40px; line-height: 40px; font-family: Open Sans,sans-serif,Arial; font-weight: 600; font-size: 14px; color: #000; text-transform: uppercase;">AUDIT TRAIL</header>
+                                            <div class="reql-section-container_body" style="overflow: hidden;">
+                                                <div class="reql-activity-section" style="display: flex; flex-flow: column; }">
+                                                    <div class="reql-activity-section_items" style="display: flex; flex-flow: column; padding-bottom: 25px;">
+                                                        <div class="reql-activity-item reql-activity-item--right" id="reql-activity-item" style="padding-left: 0; padding-right: 50px; position:relative; min-height:35px;">
+                                                            <div class="reql-activity-item_icon common-ui-user-hover" style="left:auto; right:0; position: absolute; top:15px; cursor:pointer;">
+                                                                <div class="ui-raw-avatar ui-raw-avatar--abbreviation" title="ryanezvalencia@gmail.com" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px;">RY</div>
+                                                            </div>
+                                                            <div class="reql-activity-item_author-name-row" style="text-align: right;">
+                                                                <div class="reql-activity-item_author-name common-ui-user-hover" id="reql-activity-item__author-name">Ricardo Yanez</div>
+                                                            </div>
+                                                            <div class="reql-activity-item_message-row" id="reql-activity-item__message" style="text-align: right;"><span>Submitted request for approval.</span><span></span></div>
+                                                            <div class="reql-activity-item_event-date" id="reql-activity-item__event-date" style="text-align: right;">Mar 22, 2021 7:30 AM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reql-standalone-request-card__add-comment-section reql-add-comment-section" id="reql-add-comment-section" style="flex: none;border-top: 1px solid #e4e4e4;padding: 6px 60px 8px; position: relative;">
+                                <input accept=".bmp,.numbers,.rtf,.csv,.odf,.rtf,.text,.doc,.ods,.tif,.docx,.odt,.tiff,.eml,.pages,.txt,.gif,.pdf,.xls,.jpeg,.jpg,.png,.xlsx,.ppt,.zip,.keynote,.pptx,.7z,.msg,.rar" multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+                                <div class="reql-add-comment-section__drag-overlay" style=" padding: 30px 60px; position: relative; left: 0; right: 0; bottom: 0; height: 200px; background: #fff; z-index: 10; -webkit-user-select: none; user-select: none; display: none; border-top: 1px solid #e4e4e4; color: #a0a1a1;">
+                                    <div class="reql-add-comment-section__drag-content" style="flex: 1; display: flex; align-items: center; justify-content: center; flex-flow: column; border: 2px dashed #a0a1a1; border-radius: 5px;">
+                                        <div class="reql-add-comment-section__drag-icon" style=" fill: currentColor; margin-bottom: 5px;">
+                                            <div class="" style="width: 40px; height: 38px;">
+                                                <i class="fa fa-paperclip"></i>
+                                            </div>
+                                        </div>
+                                        <div class="reql-add-comment-section_drag-text">Drop files here</div>
+                                    </div>
+                                </div>
+                                <div class="reql-add-comment-section_main-row">
+                                    <div class="reql-add-comment-section_main-column">
+                                        <textarea id="reql-add-comment-section_comment-editor" class="reql-add-comment-section__comment-editor form-text-area-editor--t-form" placeholder="Leave a comment" rows="1" style="max-height: 93px; overflow: hidden; overflow-wrap: break-word; height: 30px;"></textarea>
+                                        <div class="reql-add-comment-section_attachments-list"></div>
+                                    </div>
+                                    <div id="reql-add-comment-section_attach-button" class="reql-add-comment-section__attach-button reql-add-comment-section__attach-button--inactive">
+                                        <div class=""><i class="fa fa-paperclip"></i></div>
+                                    </div>
+                                    <div id="reql-add-comment-section_send-button" class="reql-add-comment-section__send-button reql-add-comment-section__send-button--disabled">
+                                        <div class=""><i class="fa fa-paper-plane"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reql-page_card-overlay reql-page_card-overlay-active"></div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
