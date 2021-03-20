@@ -136,147 +136,163 @@
                                             <header class="reql-section-container_header" style="flex: none; height: 40px; line-height: 40px; font-family: Open Sans,sans-serif,Arial; font-weight: 600; font-size: 14px; color: #000; text-transform: uppercase;">Approval Workflow</header>
                                             <div class="reql-section-container_body" style="overflow: hidden;">
                                                 <div class="reql-workflow-section" id="reql-workflow-section" style="padding: 10px 0 30px; display: flex; overflow-x: auto;">
-                                                    <nav>
-                                                        <div class="nav nav-pills nav-fill" id="nav-tab" role="tablist">
-                                                            <a class="nav-link active" id="step1-tab" data-toggle="tab" href="#step1">Step 1</a>
-                                                            <a class="nav-link" id="step2-tab" data-toggle="tab" href="#step2">Step 2</a>
-                                                            <a class="nav-link" id="step3-tab" data-toggle="tab" href="#step3">Step 3</a>
-                                                        </div>
-                                                    </nav>
-                                                    <div class="tab-content py-4" id="nav-tabContent">
-                                                        <div class="tab-pane fade show active" id="step1">
-                                                            <h4>Step 1</h4>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Required field 1</label>
-                                                                <input type="text" class="form-control" id="first_name" required>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Required field 2</label>
-                                                                <input type="text" class="form-control" id="first_name" required>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Optional field</label>
-                                                                <input type="text" class="form-control" id="first_name">
-                                                            </div>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="step2">
-                                                            <h4>Step 2</h4>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Required field 1</label>
-                                                                <input type="text" class="form-control" id="first_name" required>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Optional field</label>
-                                                                <input type="text" class="form-control" id="first_name">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Required field 2</label>
-                                                                <textarea rows="5" class="form-control" required></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="step3">
-                                                            <h4>Step 3</h4>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Required field 1</label>
-                                                                <input type="text" class="form-control-plaintext" value="Lorem ipsum dolor sit amet" id="first_name">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Optional field</label>
-                                                                <input type="text" class="form-control-plaintext" value="Lorem ipsum dolor sit amet" id="first_name">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="first_name">Required field 2</label>
-                                                                <input type="text" class="form-control-plaintext" value="Lorem ipsum dolor sit amet" id="first_name">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row justify-content-between">
-                                                            <div class="col-auto"><button type="button" class="btn btn-secondary" data-enchanter="previous">Previous</button></div>
-                                                            <div class="col-auto">
-                                                                <button type="button" class="btn btn-primary" data-enchanter="next">Next</button>
-                                                                <button type="submit" class="btn btn-primary" data-enchanter="finish">Finish</button>
+                                                    <!-- MultiStep Form -->
+                                                    <div class="container-fluid">
+                                                        <div class="row justify-content-center mt-0">
+                                                            <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+                                                                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 mx-0">
+                                                                            <form id="msform">
+                                                                                <!-- progressbar -->
+                                                                                <ul id="progressbar">
+                                                                                    <li class="active" id="account"><strong>Approval step1</strong></li>
+                                                                                    <li id="personal"><strong>Approval step2</strong></li>
+                                                                                    <li id="payment"><strong>Approval step3</strong></li>
+                                                                                    <li id="confirm"><strong>Finish</strong></li>
+                                                                                </ul> <!-- fieldsets -->
+                                                                                <fieldset>
+                                                                                    <div class="form-card">
+                                                                                        <p>@item.Description</p>
+                                                                                        <div class="request-toolbar-integration-header">
+                                                                                            <div class="common-ui-user-hover">
+                                                                                                <div class="request-toolbar-integration-header_avatar" title="test">RY</div>
+                                                                                            </div>
+                                                                                            <div class="request-toolbar-integration-header_requested-by-block">
+                                                                                                <div class="request-toolbar-integration-header_source">Submitted by Ricardo Yanez</div>
+                                                                                                <div class="request-toolbar-integration-header_company-name" title="PLIG">PLIG</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                                                                                </fieldset>
+                                                                                <fieldset>
+                                                                                    <div class="form-card">
+                                                                                        <p>@item.Description</p>
+                                                                                        <div class="request-toolbar-integration-header">
+                                                                                            <div class="common-ui-user-hover">
+                                                                                                <div class="request-toolbar-integration-header_avatar" title="test">RY</div>
+                                                                                            </div>
+                                                                                            <div class="request-toolbar-integration-header_requested-by-block">
+                                                                                                <div class="request-toolbar-integration-header_source">Submitted by Ricardo Yanez</div>
+                                                                                                <div class="request-toolbar-integration-header_company-name" title="PLIG">PLIG</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
+                                                                                </fieldset>
+                                                                                <fieldset>
+                                                                                    <div class="form-card">
+                                                                                        <p>@item.Description</p>
+                                                                                        <div class="request-toolbar-integration-header">
+                                                                                            <div class="common-ui-user-hover">
+                                                                                                <div class="request-toolbar-integration-header_avatar" title="test">RY</div>
+                                                                                            </div>
+                                                                                            <div class="request-toolbar-integration-header_requested-by-block">
+                                                                                                <div class="request-toolbar-integration-header_source">Submitted by Ricardo Yanez</div>
+                                                                                                <div class="request-toolbar-integration-header_company-name" title="PLIG">PLIG</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="make_payment" class="next action-button" value="Confirm" />
+                                                                                </fieldset>
+                                                                                <fieldset>
+                                                                                    <div class="form-card">
+                                                                                        <h2 class="fs-title text-center">Success !</h2> <br><br>
+                                                                                        <div class="row justify-content-center">
+                                                                                            <div class="col-3"><img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image"> </div>
+                                                                                        </div> <br><br>
+                                                                                        <div class="row justify-content-center">
+                                                                                            <div class="col-7 text-center">
+                                                                                                <h5>All process Request complete</h5>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </fieldset>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <!--<div class="reql-workflow-section_step-container reql-workflow-section_step-container-selected" style="display: flex; flex-flow: column; overflow: hidden; min-width: 40%;">
-                <div class="reql-workflow-section_step-bubble-row" style=" display: flex; align-items: center;">
-                    <div class="reql-workflow-section_step-bubble-wrp" style="overflow: hidden; width: 100%;">
-                        <div class="reql-workflow-section_step-bubble reql-workflow-section_step-bubble--selected reql-workflow-section__step-bubble--active ui-tooltip" id="reql-workflow-section__step-bubble" aria-owns="submenu" aria-controls="portal1" style="border: 1px solid #77aa84; color: #477753; margin-left:5px;">
-                            <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
-                            <div class="reql-workflow-section_step-active-text" id="reql-workflow-section__step-active-text" style="font-family: Open Sans,sans-serif,Arial; font-weight: 600; font-size: 11px; text-transform: uppercase; margin-left: 10px; text-align: right; white-space: nowrap;">Active</div>
-                        </div>
-                    </div>
-                    <!--<div class="reql-workflow-section__step-separator-icon" style=" margin: 0 6px 0 5px; flex: none;">
-                            <div class="ui-icon">
-                                <svg width="6" height="12"><use xlink:href="#bubble-separator-icon"></use></svg>
-                            </div>
-                        </div>
-                    </div>-->
+    <div class="reql-workflow-section_step-bubble-row" style=" display: flex; align-items: center;">
+        <div class="reql-workflow-section_step-bubble-wrp" style="overflow: hidden; width: 100%;">
+            <div class="reql-workflow-section_step-bubble reql-workflow-section_step-bubble--selected reql-workflow-section__step-bubble--active ui-tooltip" id="reql-workflow-section__step-bubble" aria-owns="submenu" aria-controls="portal1" style="border: 1px solid #77aa84; color: #477753; margin-left:5px;">
+                <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                <div class="reql-workflow-section_step-active-text" id="reql-workflow-section__step-active-text" style="font-family: Open Sans,sans-serif,Arial; font-weight: 600; font-size: 11px; text-transform: uppercase; margin-left: 10px; text-align: right; white-space: nowrap;">Active</div>
+            </div>
+        </div>
+        <!--<div class="reql-workflow-section__step-separator-icon" style=" margin: 0 6px 0 5px; flex: none;">
+                <div class="ui-icon">
+                    <svg width="6" height="12"><use xlink:href="#bubble-separator-icon"></use></svg>
+                </div>
+            </div>
+        </div>-->
                                                     <!--<div class="reql-workflow-section__step-details" style="display: flex; flex-flow: column; margin-right: 18px;">
-                            <div class="reql-workflow-section__step-type" style="font-family: Open Sans,sans-serif,Arial; font-weight: 400; font-size: 11px; color: #6c6a6a; text-align: center; margin-top: 5px;">Approval condition: All</div>
-                            <div class="reql-workflow-section__step-participant-list" style=" display: flex; flex-flow: wrap; margin-top: 20px;">
-                                <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="Jaime Lorenzo Fonseca Ruiz" title="test" style=" width: 30px; height: 30px; line-height: 30px; font-size: 13px;">
-                                    <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--image" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px; background-image: url(&quot;https://approvalmax.com;);"></div>
-                                    <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Jaime Lorenzo Fonseca Ruiz</div>
-                                </div>
-                                <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="test" title="test">
-                                    <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--image" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px; background-image: url(&quot;https://approvalmax.com;);"></div>
-                                    <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Jaime Lorenzo Fonseca Ruiz</div>
-                                </div>
-                                <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="Ricardo Yanez" title="test">
-                                    <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--abbreviation" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px;">RY</div>
-                                    <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Ricardo Yanez</div>
-                                </div>
-                                <button type="button" class="reql-workflow-section__step-edit-button ui-transparent-button" role="button" tabindex="0" title="Change Approvers in this step" id="reql-workflow-section__step-edit-button">
-                                    <div>
-                                        <div class="ui-icon">
-                                            <svg width="30" height="30"><use xlink:href="#workflow-step-edit-icon"></use></svg>
-                                        </div>
-                                    </div>
-                                </button>
-                                <button type="button" class="reql-workflow-section__step-reassign-button ui-transparent-button" role="button" tabindex="0" title="Reassign request to another Approver" id="reql-workflow-section__step-reassign-button">
-                                    <div>
-                                        <div class="ui-icon">
-                                            <svg width="30" height="30"><use xlink:href="#workflow-step-reassign-icon"></use></svg>
-                                        </div>
-                                    </div>
-                                </button>
-                            </div>///
+                <div class="reql-workflow-section__step-type" style="font-family: Open Sans,sans-serif,Arial; font-weight: 400; font-size: 11px; color: #6c6a6a; text-align: center; margin-top: 5px;">Approval condition: All</div>
+                <div class="reql-workflow-section__step-participant-list" style=" display: flex; flex-flow: wrap; margin-top: 20px;">
+                    <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="Jaime Lorenzo Fonseca Ruiz" title="test" style=" width: 30px; height: 30px; line-height: 30px; font-size: 13px;">
+                        <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--image" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px; background-image: url(&quot;https://approvalmax.com;);"></div>
+                        <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Jaime Lorenzo Fonseca Ruiz</div>
                     </div>
-                </div>
-                <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
-                    <div class="reql-workflow-section_step-bubble-row">
-                        <div class="reql-workflow-section_step-bubble-wrp">
-                            <div class="reql-workflow-section_step-bubble reql-workflow-section_step-bubble--not-started ui-tooltip" id="reql-workflow-section__step-bubble">
-                                <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                    <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="test" title="test">
+                        <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--image" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px; background-image: url(&quot;https://approvalmax.com;);"></div>
+                        <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Jaime Lorenzo Fonseca Ruiz</div>
+                    </div>
+                    <div class="reql-workflow-section__step-participant common-ui-user-hover" id="reql-workflow-section__step-participant" id-name="Ricardo Yanez" title="test">
+                        <div class="reql-workflow-section__step-participant-avatar ui-raw-avatar ui-raw-avatar--abbreviation" style="width: 30px; height: 30px; line-height: 30px; font-size: 13px;">RY</div>
+                        <div class="reql-workflow-section__step-participant-name reql-workflow-section__step-participant-name--hide">Ricardo Yanez</div>
+                    </div>
+                    <button type="button" class="reql-workflow-section__step-edit-button ui-transparent-button" role="button" tabindex="0" title="Change Approvers in this step" id="reql-workflow-section__step-edit-button">
+                        <div>
+                            <div class="ui-icon">
+                                <svg width="30" height="30"><use xlink:href="#workflow-step-edit-icon"></use></svg>
                             </div>
                         </div>
-                        <div class="reql-workflow-section__step-separator-icon" style="align-content:center;">
-                            <div class=""><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
-                    <div class="reql-workflow-section_step-bubble-row">
-                        <div class="reql-workflow-section_step-bubble-wrp">
-                            <div class="reql-workflow-section_step-bubble reql-workflow-section__step-bubble--not-started ui-tooltip" id="reql-workflow-section__step-bubble">
-                                <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                    </button>
+                    <button type="button" class="reql-workflow-section__step-reassign-button ui-transparent-button" role="button" tabindex="0" title="Reassign request to another Approver" id="reql-workflow-section__step-reassign-button">
+                        <div>
+                            <div class="ui-icon">
+                                <svg width="30" height="30"><use xlink:href="#workflow-step-reassign-icon"></use></svg>
                             </div>
                         </div>
-                        <div class="reql-workflow-section_step-separator-icon">
-                            <div class=""><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
+                    </button>
+                </div>///
+        </div>
+    </div>
+    <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
+        <div class="reql-workflow-section_step-bubble-row">
+            <div class="reql-workflow-section_step-bubble-wrp">
+                <div class="reql-workflow-section_step-bubble reql-workflow-section_step-bubble--not-started ui-tooltip" id="reql-workflow-section__step-bubble">
+                    <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
                 </div>
-                <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
-                    <div class="reql-workflow-section_step-bubble-row">
-                        <div class="reql-workflow-section_step-bubble-wrp">
-                            <div class="reql-workflow-section_step-bubble reql-workflow-section__step-bubble--not-started" id="reql-workflow-section__step-bubble" aria-owns="submenu" aria-controls="portal2">
-                                <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+            </div>
+            <div class="reql-workflow-section__step-separator-icon" style="align-content:center;">
+                <div class=""><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
+        <div class="reql-workflow-section_step-bubble-row">
+            <div class="reql-workflow-section_step-bubble-wrp">
+                <div class="reql-workflow-section_step-bubble reql-workflow-section__step-bubble--not-started ui-tooltip" id="reql-workflow-section__step-bubble">
+                    <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                </div>
+            </div>
+            <div class="reql-workflow-section_step-separator-icon">
+                <div class=""><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="reql-workflow-section_step-container" id="reql-workflow-section_step" id-name="Approval step">
+        <div class="reql-workflow-section_step-bubble-row">
+            <div class="reql-workflow-section_step-bubble-wrp">
+                <div class="reql-workflow-section_step-bubble reql-workflow-section__step-bubble--not-started" id="reql-workflow-section__step-bubble" aria-owns="submenu" aria-controls="portal2">
+                    <div class="reql-workflow-section_step-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Approval step</div>
+                </div>
+            </div>
+        </div>
+    </div>-->
                                                 </div>
                                             </div>
                                         </section>
