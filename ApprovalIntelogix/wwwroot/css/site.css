@@ -1,0 +1,305 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Request
+-------------------------------------------------- */
+.request-page-card-wrp {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+}
+
+.request-page-card {
+    background: #fff;
+    left: 0;
+    top: 0;
+}
+
+.card-toolbar {
+    flex: none;
+}
+
+.request-toolbar-header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 60px;
+}
+
+.request-toolbar-title {
+    flex: 1;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.request-toolbar-title-text {
+    flex: 1;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.request-toolbar-amount {
+    flex: none;
+    font-weight: 800;
+    font-size: 16px;
+    color: #000;
+}
+
+.request-toolbar_body {
+    display: flex;
+    width: 100%;
+    padding: 0 60px;
+}
+
+.request-toolbar_body-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.request-toolbar-integration-header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.common-ui-user-hover {
+    box-sizing: border-box;
+}
+
+.request-toolbar-integration-header_avatar {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+.request-toolbar-integration-header_requested-by-block {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.request-toolbar-integration-header_source {
+    font-weight: 50%;
+    font-size: 12px;
+    color: #777d81;
+}
+
+.request-toolbar-integration-header_company-name {
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    font-size: 11px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.request-toolbar_secondary-actions {
+    display: flex;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 10px 0 0;
+}
+
+.request-toolbar_secondary-actions-title {
+    font-weight: 50%;
+    font-size: 12px;
+    color: #777d81;
+    margin-right: 10px;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+.request-toolbar_secondary-actions-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex-shrink: 0;
+}
+.request-toolbar_body-right {
+    flex: none;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    margin-left: 10px;
+}
+
+.request-toolbar_body-right-primary-row {
+    display: flex;
+    align-items: center;
+}
+
+.request-toolbar_post-approval-section {
+    display: flex;
+    align-items: center;
+}
+
+.request-toolbar_primary-buttons {
+    margin-left: 10px;
+    display: flex;
+}
+
+.request-force-decision-button {
+    margin-right: 3px;
+    box-sizing: border-box;
+}
+
+.request-workflow {
+    flex: 1;
+    overflow: hidden;
+    border-top: 1px solid #e4e4e4;
+    position: relative;
+    z-index: 0;
+    margin-top: 10px;
+}
+
+.request-workflow_scroll-shadow {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    box-shadow: 0 2px 3px #ddd;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    pointer-events: none;
+}
+
+.request-workflow_content {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/*Chat*/
+.chat-online {
+    color: #34ce57
+}
+
+.chat-offline {
+    color: #e4606d
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    max-height: 800px;
+    overflow-y: scroll
+}
+
+.chat-message-left,
+.chat-message-right {
+    display: flex;
+    flex-shrink: 0
+}
+
+.chat-message-left {
+    margin-right: auto
+}
+
+.chat-message-right {
+    flex-direction: row-reverse;
+    margin-left: auto
+}
+
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.px-4 {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+}
+
+.flex-grow-0 {
+    flex-grow: 0 !important;
+}
+
+.border-top {
+    border-top: 1px solid #dee2e6 !important;
+}
