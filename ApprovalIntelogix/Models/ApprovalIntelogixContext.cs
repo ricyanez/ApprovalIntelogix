@@ -174,5 +174,6 @@ namespace ApprovalIntelogix.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
     }
 }
